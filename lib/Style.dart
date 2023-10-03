@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 
 InputDecoration AppinputDecoration(label){
   return InputDecoration(
-    contentPadding: EdgeInsets.fromLTRB(15, 25, 25, 15),
+    contentPadding: EdgeInsets.fromLTRB(15, 26, 26, 15),
     border: OutlineInputBorder(),
     labelText: label,
   );
 }
 ButtonStyle Appbutton(){
   return ElevatedButton.styleFrom(
-    padding: EdgeInsets.all(16),
+    padding: EdgeInsets.all(18),
 backgroundColor: Colors.green,
       shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(5))
-
   )
   );
 }
@@ -27,5 +26,4 @@ child: Container(
 child: child,
 ),
   );
-
 }

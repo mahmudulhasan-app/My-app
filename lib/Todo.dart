@@ -10,11 +10,11 @@ class Todopage extends StatefulWidget{
   }
 }
 class Todopageview extends State<Todopage>{
+
   List TodoList=[];
-  var item='';
+  var item="";
 
   MyInputChange(content){
-
     setState(() {
       item=content;
     });
@@ -32,7 +32,9 @@ class Todopageview extends State<Todopage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("ToDo App"),),
+      appBar: AppBar(
+
+        title: Text("ToDo App"),),
       body: Container(
         padding: EdgeInsets.all(18),
         child: Column(
@@ -42,8 +44,21 @@ class Todopageview extends State<Todopage>{
                 child: Row(
                   children: [
 
-                    Expanded(flex: 70,child: TextField(onChanged: (content){MyInputChange(content);},decoration: AppinputDecoration("Items"))),
-                    Expanded(flex: 20, child:Padding(padding: EdgeInsets.only(left: 5),child: ElevatedButton(onPressed: (){Additem();},child: Text("Add"),style: Appbutton(),))),
+                    Expanded(flex: 70,
+                        child: TextField(onChanged: (content){MyInputChange(content);},
+                            decoration: AppinputDecoration(
+                                "Items",
+                            ))),
+                    Expanded(flex: 20,
+                        child:Padding(padding: EdgeInsets.only(left: 5),
+                            child: ElevatedButton(onPressed: (){Additem();},
+                              child: Text(
+                                "Add",
+                                style: TextStyle(
+                                  color: Colors.white
+                                ),
+
+                              ),style: Appbutton(),))),
                   ],//fix this problem
                 )
             ),
@@ -56,8 +71,8 @@ class Todopageview extends State<Todopage>{
                         child: Row(
                           children: [
 
-                            Expanded(flex: 90,child: Text(TodoList[index]['ITEMS'].toString()),),
-                            Expanded(flex: 17, child: ElevatedButton(onPressed: (){RemoveItem(index);},child: Icon(Icons.delete),),),
+                            Expanded(flex: 120,child: Text(TodoList[index]['item'].toString()),),
+                            Expanded(flex: 30, child: ElevatedButton(onPressed: (){RemoveItem(index);},child: Icon(Icons.delete),),),
                           ],
                         ),
                       );
