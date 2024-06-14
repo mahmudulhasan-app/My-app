@@ -3,38 +3,41 @@ import 'package:flutter/material.dart';
 
 import 'Style.dart';
 
-class Todopage extends StatefulWidget{
+class Todopage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return Todopageview();
   }
 }
-class Todopageview extends State<Todopage>{
 
-  List TodoList=[];
-  var item="";
+class Todopageview extends State<Todopage> {
+  List TodoList = [];
+  var item = "";
 
-  MyInputChange(content){
+  MyInputChange(content) {
     setState(() {
-      item=content;
+      item = content;
     });
   }
-  Additem(){
-    setState((){
-      TodoList.add({'item':item});
+
+  Additem() {
+    setState(() {
+      TodoList.add({'item': item});
     });
   }
-  RemoveItem(index){
-    setState((){
+
+  ItemRemove(index) {
+    setState(() {
       TodoList.removeAt(index);
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
-        title: Text("ToDo App"),),
+        title: Text("ToDo App"),
+      ),
       body: Container(
         padding: EdgeInsets.all(18),
         child: Column(
@@ -43,42 +46,56 @@ class Todopageview extends State<Todopage>{
                 flex: 10,
                 child: Row(
                   children: [
-
-                    Expanded(flex: 70,
-                        child: TextField(onChanged: (content){MyInputChange(content);},
+                    Expanded(
+                        flex: 70,
+                        child: TextField(
+                            onChanged: (content) {
+                              MyInputChange(content);
+                            },
                             decoration: AppinputDecoration(
-                                "Items",
+                              'Items',
                             ))),
-                    Expanded(flex: 20,
-                        child:Padding(padding: EdgeInsets.only(left: 5),
-                            child: ElevatedButton(onPressed: (){Additem();},
+                    Expanded(
+                        flex: 20,
+                        child: Padding(
+                            padding: EdgeInsets.only(left: 5),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Additem();
+                              },
                               child: Text(
-                                "Add",
-                                style: TextStyle(
-                                  color: Colors.white
-                                ),
-
-                              ),style: Appbutton(),))),
-                  ],//fix this problem
-                )
-            ),
+                                'Add',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              style: Appbutton(),
+                            ))),
+                  ], //fix this problem
+                )),
             Expanded(
                 flex: 90,
                 child: ListView.builder(
                     itemCount: TodoList.length,
-                    itemBuilder: (context,index){
+                    itemBuilder: (context, index) {
                       return Card(
                         child: Row(
                           children: [
-
-                            Expanded(flex: 120,child: Text(TodoList[index]['item'].toString()),),
-                            Expanded(flex: 30, child: ElevatedButton(onPressed: (){RemoveItem(index);},child: Icon(Icons.delete),),),
+                            Expanded(
+                              flex: 120,
+                              child: Text(TodoList[index]['item'].toString()),
+                            ),
+                            Expanded(
+                              flex: 30,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  ItemRemove(index);
+                                },
+                                child: Icon(Icons.delete),
+                              ),
+                            ),
                           ],
                         ),
                       );
-                    }
-                )
-            )
+                    }))
           ],
         ),
       ),

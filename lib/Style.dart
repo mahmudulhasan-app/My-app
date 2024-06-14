@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 InputDecoration AppinputDecoration(label){
   return InputDecoration(
-    contentPadding: EdgeInsets.fromLTRB(15, 26, 26, 15),
+    contentPadding: EdgeInsets.fromLTRB(10, 25, 25, 10),
     border: OutlineInputBorder(),
     labelText: label,
   );
