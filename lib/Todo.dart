@@ -68,9 +68,12 @@ class Todopageview extends State<Todopage> {
                                 style: TextStyle(color: Colors.white),
                               ),
                               style: Appbutton(),
-                            ))),
+                            )
+                        )
+                    ),
                   ], //fix this problem
-                )),
+                )
+            ),
             Expanded(
                 flex: 90,
                 child: ListView.builder(
@@ -95,7 +98,9 @@ class Todopageview extends State<Todopage> {
                           ],
                         ),
                       );
-                    }))
+                    }
+                )
+            )
           ],
         ),
       ),

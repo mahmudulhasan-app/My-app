@@ -13,10 +13,6 @@ class Myapp extends StatelessWidget{
     title: "To Do",
 home: Todopage(),
     theme: ThemeData(primarySwatch: Colors.blue),
-  );
-  }
-
-
-
-
+         );
+     }
 }

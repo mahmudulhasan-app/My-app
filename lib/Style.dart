@@ -13,7 +13,7 @@ ButtonStyle Appbutton(){
 backgroundColor: Colors.green,
       shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(5))
-  )
+     )
   );
 }
 SizedBox Sizebox50(child){
@@ -24,6 +24,6 @@ child: Container(
   alignment: Alignment.center,
   padding: EdgeInsets.all(8),
 child: child,
-),
+     ),
   );
 }
